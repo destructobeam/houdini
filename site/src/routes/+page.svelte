@@ -3,6 +3,15 @@
 	import CodeSample from './CodeSample.svelte'
 	import Block from './Block.svelte'
 	import Logos from './Logos.svelte'
+	import { onMount } from 'svelte'
+	import { fly, fade } from 'svelte/transition'
+	import { backOut } from 'svelte/easing'
+
+	let loaded = false
+
+	onMount(() => {
+		loaded = true
+	})
 </script>
 
 <SEO />
@@ -33,54 +42,139 @@
 		<Logos class="hide-tiny" />
 	</header>
 	<main id="main">
-		<h1>
-			<span class="highlight">Houdini</span> or: How I Learned to Stop Worrying and Love
-			<span class="graphql">GraphQL</span>
-			<Emoji name="exploding-head" height={75} fallback="🤯" />
-		</h1>
+		{#if loaded}
+			<h1 in:fly={{ y: -25, easing: backOut }}>
+				<span class="highlight">Houdini</span> or: How I Learned to Stop Worrying and Love
+				<span class="graphql">GraphQL</span>
+				<Emoji name="exploding-head" height={75} fallback="🤯" />
+			</h1>
+		{:else}
+			<!-- Same size & transparent to not have any movement on load + having the right SEO -->
+			<h1 style="color: transparent; padding-bottom: 20px;">
+				Houdini or: How I Learned to Stop Worrying and Love GraphQL
+			</h1>
+		{/if}
 		<section class="hero">
-			<div>
-				<p class="hero-text">
-					It’s here. A <em>fully-featured</em> GraphQL client that seamlessly integrates with the framework
-					of your choice.
-				</p>
-				<p class="hero-subtext">
-					Start with a schema. Write queries and let Houdini take care of the rest. Fully automatic
-					and totally customizable. <b>Declarative</b>, <b>Composable</b>, <b>Typesafe</b>.
-					First-class support for
-					<a data-sveltekit-preload-data href="/api/subscription">Subscriptions</a>,
-					<a data-sveltekit-preload-data href="/guides/pagination">Pagination</a>,
-					<a data-sveltekit-preload-data href="/api/mutation#lists">List Mutations</a>,
-					<a data-sveltekit-preload-data href="/api/mutation#optimistic-responses"
-						>Optimistic Responses</a
-					>, and so much more. You didn’t know you needed this.
-				</p>
-				<div class="hero-dive-in">
-					<p>Dive in:</p>
-					<nav class="framework-links">
-						<a data-sveltekit-preload-data href="/intro/welcome">
-							<img src="/images/svelte.svg" width="20px" />
-							SvelteKit
-						</a>
-						<a data-sveltekit-preload-data href="#disabled" disabled>
-							<img src="/images/react.svg" width="20px" />
-							Next
-							<div class="coming-soon">Coming Soon</div>
-						</a>
-						<a data-sveltekit-preload-data href="#disabled" disabled>
-							<img src="/images/vue.svg" width="20px" />
-							Nuxt
-							<div class="coming-soon">Coming Soon</div>
-						</a>
-						<a data-sveltekit-preload-data href="#disabled" disabled>
-							<img src="/images/solid.svg" width="20px" />
-							SolidStart
-							<div class="coming-soon">Coming Soon</div>
-						</a>
-					</nav>
+			{#if loaded}
+				<div in:fly={{ x: -25, easing: backOut }}>
+					<p class="hero-text">
+						It’s here. A <em>fully-featured</em> GraphQL client that seamlessly integrates with the framework
+						of your choice.
+					</p>
+					<p class="hero-subtext">
+						Start with a schema. Write queries and let Houdini take care of the rest. Fully
+						automatic and totally customizable. <b>Declarative</b>, <b>Composable</b>,
+						<b>Typesafe</b>. First-class support for
+						<a data-sveltekit-preload-data href="/api/subscription">Subscriptions</a>,
+						<a data-sveltekit-preload-data href="/guides/pagination">Pagination</a>,
+						<a data-sveltekit-preload-data href="/api/mutation#lists">List Mutations</a>,
+						<a data-sveltekit-preload-data href="/api/mutation#optimistic-responses"
+							>Optimistic Responses</a
+						>, and so much more. You didn’t know you needed this.
+					</p>
+					<div class="hero-dive-in">
+						<p>Dive in:</p>
+						<nav class="framework-links">
+							<a
+								in:fly={{ y: 50, delay: 50, easing: backOut }}
+								data-sveltekit-preload-data
+								href="/intro/welcome"
+							>
+								<img src="/images/svelte.svg" width="20px" />
+								SvelteKit
+							</a>
+							<a
+								in:fly={{ y: 50, delay: 100, easing: backOut }}
+								data-sveltekit-preload-data
+								href="#disabled"
+								disabled
+							>
+								<img src="/images/react.svg" width="20px" />
+								Next
+								<div class="coming-soon">Coming Soon</div>
+							</a>
+							<a
+								in:fly={{ y: 50, delay: 150, easing: backOut }}
+								data-sveltekit-preload-data
+								href="#disabled"
+								disabled
+							>
+								<img src="/images/vue.svg" width="20px" />
+								Nuxt
+								<div class="coming-soon">Coming Soon</div>
+							</a>
+							<a
+								in:fly={{ y: 50, delay: 200, easing: backOut }}
+								data-sveltekit-preload-data
+								href="#disabled"
+								disabled
+							>
+								<img src="/images/solid.svg" width="20px" />
+								SolidStart
+								<div class="coming-soon">Coming Soon</div>
+							</a>
+						</nav>
+					</div>
 				</div>
-			</div>
-			<CodeSample class="splash-code-sample" />
+			{:else}
+				<div>
+					<p class="hero-text transparent">
+						It’s here. A <em>fully-featured</em> GraphQL client that seamlessly integrates with the framework
+						of your choice.
+					</p>
+					<p class="hero-subtext transparent">
+						Start with a schema. Write queries and let Houdini take care of the rest. Fully
+						automatic and totally customizable. <b>Declarative</b>, <b>Composable</b>,
+						<b>Typesafe</b>. First-class support for
+						<a data-sveltekit-preload-data href="/api/subscription" style="color: transparent;"
+							>Subscriptions</a
+						>,
+						<a data-sveltekit-preload-data href="/guides/pagination" style="color: transparent;"
+							>Pagination</a
+						>,
+						<a data-sveltekit-preload-data href="/api/mutation#lists" style="color: transparent;"
+							>List Mutations</a
+						>,
+						<a
+							data-sveltekit-preload-data
+							href="/api/mutation#optimistic-responses"
+							style="color: transparent;">Optimistic Responses</a
+						>, and so much more. You didn’t know you needed this.
+					</p>
+					<div class="hero-dive-in transparent">
+						<p>Dive in:</p>
+						<!-- <nav class="framework-links">
+							<a data-sveltekit-preload-data href="/intro/welcome">
+								<img src="/images/svelte.svg" width="20px" />
+								SvelteKit
+							</a>
+							<a data-sveltekit-preload-data href="#disabled" disabled>
+								<img src="/images/react.svg" width="20px" />
+								Next
+								<div class="coming-soon">Coming Soon</div>
+							</a>
+							<a data-sveltekit-preload-data href="#disabled" disabled>
+								<img src="/images/vue.svg" width="20px" />
+								Nuxt
+								<div class="coming-soon">Coming Soon</div>
+							</a>
+							<a data-sveltekit-preload-data href="#disabled" disabled>
+								<img src="/images/solid.svg" width="20px" />
+								SolidStart
+								<div class="coming-soon">Coming Soon</div>
+							</a>
+						</nav> -->
+					</div>
+				</div>
+				<!-- <div style="height: 481px;" /> -->
+			{/if}
+			{#if loaded}
+				<div in:fly={{ x: 25, easing: backOut, opacity: 1 }}>
+					<CodeSample class="splash-code-sample" />
+				</div>
+			{:else}
+				<div style="height: 481px;" />
+			{/if}
 		</section>
 		<div class="logos-container">
 			<h2>Used in Production By</h2>
@@ -284,20 +378,13 @@
 		gap: 94px;
 	}
 
-	.hero > div {
-		display: flex;
-		flex-direction: column;
-		width: 10px;
-		justify-content: space-between;
-	}
-
 	.hero > *:first-child {
 		flex-grow: 5;
 		padding-bottom: 35px;
 		width: 10px;
 	}
 
-	:global(.splash-code-sample) {
+	.hero > * {
 		flex-grow: 4;
 		width: 10px;
 	}
@@ -468,8 +555,10 @@
 			gap: 50px;
 		}
 
-		:global(.splash-code-sample) {
+		.hero > * {
 			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
 			padding-bottom: 50px;
 		}
 
@@ -542,5 +631,9 @@
 		:global(.show-tiny) {
 			display: flex !important;
 		}
+	}
+
+	.transparent {
+		color: transparent;
 	}
 </style>
