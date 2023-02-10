@@ -44,8 +44,7 @@ test('adds kind, name, and raw, response, and selection', async function () {
 
 		    "raw": \`query TestQuery {
 		  version
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -74,8 +73,7 @@ test('adds kind, name, and raw, response, and selection', async function () {
 
 		    "raw": \`fragment TestFragment on User {
 		  firstName
-		}
-		\`,
+		}\`,
 
 		    "rootType": "User",
 
@@ -121,8 +119,7 @@ test('selection includes fragments', async function () {
 
 		fragment TestFragment on User {
 		  firstName
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -165,8 +162,7 @@ test('selection includes fragments', async function () {
 
 		    "raw": \`fragment TestFragment on User {
 		  firstName
-		}
-		\`,
+		}\`,
 
 		    "rootType": "User",
 
@@ -211,8 +207,7 @@ test('internal directives are scrubbed', async function () {
 
 		fragment A on User {
 		  firstName
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -279,8 +274,7 @@ test('variables only used by internal directives are scrubbed', async function (
 
 		fragment A on User {
 		  firstName
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -351,8 +345,7 @@ test('overlapping query and fragment selection', async function () {
 
 		fragment A on User {
 		  firstName
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -415,8 +408,7 @@ test('interface to interface inline fragment', async function () {
 		    id
 		    __typename
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -549,8 +541,7 @@ test('paginate over unions', async function () {
 		      endCursor
 		    }
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -732,8 +723,7 @@ test('overlapping query and fragment nested selection', async function () {
 		    }
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -856,8 +846,7 @@ test('selections with interfaces', async function () {
 		    }
 		    __typename
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -983,8 +972,7 @@ test('selections with unions', async function () {
 		    }
 		    __typename
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -1112,8 +1100,7 @@ test('selections with overlapping unions', async function () {
 		    }
 		    __typename
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -1254,8 +1241,7 @@ test('selections with unions of abstract types', async function () {
 		    }
 		    __typename
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -1399,8 +1385,7 @@ test('selections with concrete types matching multiple abstract types', async fu
 		    }
 		    __typename
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -1555,8 +1540,7 @@ describe('mutation artifacts', function () {
 			      id
 			    }
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -1641,8 +1625,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -1732,8 +1715,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -1828,8 +1810,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -1924,8 +1905,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2016,8 +1996,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_toggle on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2107,8 +2086,7 @@ describe('mutation artifacts', function () {
 
 			fragment All_Users_remove on User {
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2183,8 +2161,7 @@ describe('mutation artifacts', function () {
 			  deleteUser(id: "1234") {
 			    userID
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2250,8 +2227,7 @@ describe('mutation artifacts', function () {
 			  deleteUser(id: "1234") {
 			    userID
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2333,8 +2309,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2430,8 +2405,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2527,8 +2501,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2624,8 +2597,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2722,8 +2694,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2820,8 +2791,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -2918,8 +2888,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -3016,8 +2985,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -3112,8 +3080,7 @@ describe('mutation artifacts', function () {
 			    firstName
 			    id
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Query",
 
@@ -3228,8 +3195,7 @@ describe('mutation artifacts', function () {
 			fragment All_Users_insert on User {
 			  firstName
 			  id
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Mutation",
 
@@ -3319,8 +3285,7 @@ describe('mutation artifacts', function () {
 			    firstName
 			    id
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Query",
 
@@ -3434,8 +3399,7 @@ describe('mutation artifacts', function () {
 			      endCursor
 			    }
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Query",
 
@@ -3605,8 +3569,7 @@ describe('mutation artifacts', function () {
 			    firstName
 			    id
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Query",
 
@@ -3712,8 +3675,7 @@ describe('mutation artifacts', function () {
 			    firstName
 			    id
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Query",
 
@@ -3833,8 +3795,7 @@ test('custom scalar shows up in artifact', async function () {
 		  allItems {
 		    createdAt
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -3939,8 +3900,7 @@ test('operation inputs', async function () {
 		  user(id: $id, filter: $filter, filterList: $filterList, enumArg: $enumArg) {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -4031,8 +3991,7 @@ describe('subscription artifacts', function () {
 			      id
 			    }
 			  }
-			}
-			\`,
+			}\`,
 
 			    "rootType": "Subscription",
 
@@ -4111,8 +4070,7 @@ test('some artifactData added to artifact specific to plugins', async function (
 
 		    "raw": \`query TestQuery {
 		  version
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -4206,8 +4164,7 @@ test('nested recursive fragments', async function () {
 		  id
 		  name
 		  ...NodeDetails
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -4334,8 +4291,7 @@ test('leave @include and @skip alone', async function () {
 		  id
 		  name
 		  ...NodeDetails
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 

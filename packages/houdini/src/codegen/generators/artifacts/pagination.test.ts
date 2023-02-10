@@ -68,8 +68,7 @@ test('pagination arguments stripped from key', async function () {
 		      endCursor
 		    }
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "User",
 
@@ -208,8 +207,7 @@ test('offset based pagination marks appropriate field', async function () {
 		  friendsByOffset(limit: $limit, filter: "hello", offset: $offset) {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "User",
 
@@ -328,8 +326,7 @@ test('cursor as scalar gets the right pagination query argument types', async fu
 		    }
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -584,8 +581,7 @@ test("sibling aliases don't get marked", async function () {
 		      }
 		    }
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "User",
 

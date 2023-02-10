@@ -26,7 +26,7 @@ test('adds pagination info to full', async function () {
 
 	// load the contents of the file
 	expect(docs[0].document).toMatchInlineSnapshot(`
-		fragment UserFriends on Query @arguments(first: {type: "Int", default: 10}, after: {type: "String"}, last: {type: "Int"}, before: {type: "String"}) {
+		fragment UserFriends on Query @arguments(first: { type: "Int", default: 10 }, after: { type: "String" }, last: { type: "Int" }, before: { type: "String" }) {
 		  usersByCursor(first: $first, after: $after, last: $last, before: $before) @paginate {
 		    edges {
 		      node {
@@ -115,12 +115,11 @@ test("doesn't add pagination info to offset pagination", async function () {
 
 	// load the contents of the file
 	expect(docs[0].document).toMatchInlineSnapshot(`
-		fragment UserFriends on Query @arguments(limit: {type: "Int", default: 10}, offset: {type: "Int"}) {
+		fragment UserFriends on Query @arguments(limit: { type: "Int", default: 10 }, offset: { type: "Int" }) {
 		  usersByOffset(limit: $limit, offset: $offset) @paginate {
 		    id
 		  }
 		}
-
 	`)
 })
 
@@ -147,7 +146,7 @@ test('paginate adds forwards cursor args to the full cursor fragment', async fun
 
 	// load the contents of the file
 	expect(docs[0].document).toMatchInlineSnapshot(`
-		fragment UserFriends on Query @arguments(first: {type: "Int", default: 10}, after: {type: "String"}, last: {type: "Int"}, before: {type: "String"}) {
+		fragment UserFriends on Query @arguments(first: { type: "Int", default: 10 }, after: { type: "String" }, last: { type: "Int" }, before: { type: "String" }) {
 		  usersByCursor(first: $first, after: $after, last: $last, before: $before) @paginate {
 		    edges {
 		      node {
@@ -190,7 +189,7 @@ test('paginate adds backwards cursor args to the full cursor fragment', async fu
 
 	// load the contents of the file
 	expect(docs[0].document).toMatchInlineSnapshot(`
-		fragment UserFriends on Query @arguments(first: {type: "Int"}, after: {type: "String"}, last: {type: "Int", default: 10}, before: {type: "String"}) {
+		fragment UserFriends on Query @arguments(first: { type: "Int" }, after: { type: "String" }, last: { type: "Int", default: 10 }, before: { type: "String" }) {
 		  usersByCursor(last: $last, first: $first, after: $after, before: $before) @paginate {
 		    edges {
 		      node {
@@ -233,7 +232,7 @@ test('paginate adds forwards cursor args to the fragment', async function () {
 
 	// load the contents of the file
 	expect(docs[0].document).toMatchInlineSnapshot(`
-		fragment UserFriends on Query @arguments(first: {type: "Int", default: 10}, after: {type: "String"}) {
+		fragment UserFriends on Query @arguments(first: { type: "Int", default: 10 }, after: { type: "String" }) {
 		  usersByForwardsCursor(first: $first, after: $after) @paginate {
 		    edges {
 		      node {
@@ -320,7 +319,7 @@ test('sets before with default value', async function () {
 
 	// load the contents of the file
 	expect(docs[0].document).toMatchInlineSnapshot(`
-		fragment UserFriends on Query @arguments(first: {type: "Int"}, after: {type: "String"}, last: {type: "Int", default: 10}, before: {type: "String", default: "cursor"}) {
+		fragment UserFriends on Query @arguments(first: { type: "Int" }, after: { type: "String" }, last: { type: "Int", default: 10 }, before: { type: "String", default: "cursor" }) {
 		  usersByCursor(last: $last, before: $before, first: $first, after: $after) @paginate {
 		    edges {
 		      node {
@@ -367,7 +366,7 @@ test('embeds pagination query as a separate document', async function () {
 		  ...UserFriends_jrGTj @with(first: $first, after: $after)
 		}
 
-		fragment UserFriends_jrGTj on Query @arguments(first: {type: "Int", default: 10}, after: {type: "String"}) {
+		fragment UserFriends_jrGTj on Query @arguments(first: { type: "Int", default: 10 }, after: { type: "String" }) {
 		  usersByForwardsCursor(first: $first, after: $after) @paginate {
 		    edges {
 		      node {
@@ -449,8 +448,7 @@ test('embeds node pagination query as a separate document', async function () {
 		      endCursor
 		    }
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -749,8 +747,7 @@ test('embeds custom pagination query as a separate document', async function () 
 		      endCursor
 		    }
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -1453,8 +1450,7 @@ test('generated query has same refetch spec', async function () {
 		      endCursor
 		    }
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 

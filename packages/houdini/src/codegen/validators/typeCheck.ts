@@ -249,7 +249,7 @@ export default async function typeCheck(config: Config, docs: Document[]): Promi
 				}
 
 				// we need to validate that we have id configs for the target of the list
-				let targetTypes: readonly graphql.GraphQLObjectType<any, any>[] = [type]
+				let targetTypes: readonly graphql.GraphQLCompositeType[] = [type]
 
 				// a union doesn't have fields itself so every possible type needs to have a valid key
 				if (graphql.isUnionType(type)) {
@@ -278,7 +278,10 @@ export default async function typeCheck(config: Config, docs: Document[]): Promi
 				for (const targetType of targetTypes) {
 					const missingIDFields = config
 						.keyFieldsForType(targetType.name)
-						.filter((fieldName) => !targetType.getFields()[fieldName])
+						.filter(
+							(fieldName) =>
+								'getFields' in targetType && !targetType.getFields()[fieldName]
+						)
 
 					if (missingIDFields.length > 0) {
 						const message = `@${config.listDirective} on ${logGreen(

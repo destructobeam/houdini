@@ -53,8 +53,7 @@ test('pass argument values to generated fragments', async function () {
 		  users(stringValue: "Hello") {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -131,8 +130,7 @@ test("nullable arguments with no values don't show up in the query", async funct
 		  users {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -209,8 +207,7 @@ test("fragment arguments with default values don't rename the fragment", async f
 		  users(stringValue: "Hello") {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -299,8 +296,7 @@ test('thread query variables to inner fragments', async function () {
 		  users(stringValue: $name) {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -398,8 +394,7 @@ test('inner fragment with intermediate default value', async function () {
 		  users(stringValue: "Hello", intValue: 2) {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -488,8 +483,7 @@ test("default values don't overwrite unless explicitly passed", async function (
 		  users(stringValue: "Goodbye", intValue: 10) {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -566,8 +560,7 @@ test('default arguments', async function () {
 		  users(boolValue: true, stringValue: "Hello") {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -627,8 +620,7 @@ test('persists fragment variables in artifact', async function () {
 		  users(boolValue: $cool, stringValue: $name) {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
