@@ -28,6 +28,6 @@ const stringifyObjectWithNoQuotesOnKeys = (obj_from_json: {}): string => {
 	// but without quotes around the keys.
 	return `{${Object.keys(obj_from_json)
 		// @ts-ignore
-		.map((key) => `${key}: ${stringifyObjectWithNoQuotesOnKeys(obj_from_json[key])}`)
+		.map((key) => ` ${key}: ${stringifyObjectWithNoQuotesOnKeys(obj_from_json[key])} `)
 		.join(', ')}}`
 }

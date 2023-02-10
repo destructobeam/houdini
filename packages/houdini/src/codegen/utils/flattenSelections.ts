@@ -1,4 +1,4 @@
-import type graphql from 'graphql'
+import * as graphql from 'graphql'
 
 import type { Config } from '../../lib'
 import { HoudiniError } from '../../lib'
@@ -163,16 +163,16 @@ class FieldCollection {
 
 			// instead of adding the field on directly, let's turn the external fragment into an inline fragment
 			this.add({
-				kind: 'InlineFragment',
+				kind: graphql.Kind.INLINE_FRAGMENT,
 				typeCondition: {
-					kind: 'NamedType',
+					kind: graphql.Kind.NAMED_TYPE,
 					name: {
-						kind: 'Name',
+						kind: graphql.Kind.NAME,
 						value: definition.typeCondition.name.value,
 					},
 				},
 				selectionSet: {
-					kind: 'SelectionSet',
+					kind: graphql.Kind.SELECTION_SET,
 					selections: [...definition.selectionSet.selections],
 				},
 			})

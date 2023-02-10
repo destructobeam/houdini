@@ -40,10 +40,14 @@ test('adds internal documents to schema', async function () {
 			"""
 			directive @paginate(name: String) on FIELD
 
-			"""@prepend is used to tell the runtime to add the result to the end of the list"""
+			"""
+			@prepend is used to tell the runtime to add the result to the end of the list
+			"""
 			directive @prepend on FRAGMENT_SPREAD
 
-			"""@append is used to tell the runtime to add the result to the start of the list"""
+			"""
+			@append is used to tell the runtime to add the result to the start of the list
+			"""
 			directive @append on FRAGMENT_SPREAD
 
 			"""@allLists is used to tell the runtime to add the result to all list"""
@@ -55,28 +59,40 @@ test('adds internal documents to schema', async function () {
 			"""
 			directive @parentID(value: ID!) on FRAGMENT_SPREAD
 
-			"""@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when on FRAGMENT_SPREAD
 
-			"""@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when_not on FRAGMENT_SPREAD
 
 			"""@arguments is used to define the arguments of a fragment"""
 			directive @arguments on FRAGMENT_DEFINITION
 
-			"""@with is used to provide arguments to fragments that have been marked with @arguments"""
+			"""
+			@with is used to provide arguments to fragments that have been marked with @arguments
+			"""
 			directive @with on FRAGMENT_SPREAD
 
 			"""@cache is used to specify cache rules for a query"""
 			directive @cache(policy: CachePolicy, partial: Boolean) on QUERY
 
-			"""@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually."""
+			"""
+			@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually.
+			"""
 			directive @load on QUERY
 
-			"""@mask_enable to enable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_enable to enable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_enable on FRAGMENT_SPREAD
 
-			"""@mask_disable to disable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_disable to disable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_disable on FRAGMENT_SPREAD
 		`)
 })
@@ -114,10 +130,14 @@ test('list operations are included', async function () {
 			"""
 			directive @paginate(name: String) on FIELD
 
-			"""@prepend is used to tell the runtime to add the result to the end of the list"""
+			"""
+			@prepend is used to tell the runtime to add the result to the end of the list
+			"""
 			directive @prepend on FRAGMENT_SPREAD
 
-			"""@append is used to tell the runtime to add the result to the start of the list"""
+			"""
+			@append is used to tell the runtime to add the result to the start of the list
+			"""
 			directive @append on FRAGMENT_SPREAD
 
 			"""@allLists is used to tell the runtime to add the result to all list"""
@@ -129,28 +149,40 @@ test('list operations are included', async function () {
 			"""
 			directive @parentID(value: ID!) on FRAGMENT_SPREAD
 
-			"""@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when on FRAGMENT_SPREAD
 
-			"""@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when_not on FRAGMENT_SPREAD
 
 			"""@arguments is used to define the arguments of a fragment"""
 			directive @arguments on FRAGMENT_DEFINITION
 
-			"""@with is used to provide arguments to fragments that have been marked with @arguments"""
+			"""
+			@with is used to provide arguments to fragments that have been marked with @arguments
+			"""
 			directive @with on FRAGMENT_SPREAD
 
 			"""@cache is used to specify cache rules for a query"""
 			directive @cache(policy: CachePolicy, partial: Boolean) on QUERY
 
-			"""@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually."""
+			"""
+			@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually.
+			"""
 			directive @load on QUERY
 
-			"""@mask_enable to enable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_enable to enable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_enable on FRAGMENT_SPREAD
 
-			"""@mask_disable to disable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_disable to disable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_disable on FRAGMENT_SPREAD
 
 			directive @User_delete repeatable on FIELD
@@ -207,10 +239,14 @@ test('list operations are included but delete directive should not be in when we
 			"""
 			directive @paginate(name: String) on FIELD
 
-			"""@prepend is used to tell the runtime to add the result to the end of the list"""
+			"""
+			@prepend is used to tell the runtime to add the result to the end of the list
+			"""
 			directive @prepend on FRAGMENT_SPREAD
 
-			"""@append is used to tell the runtime to add the result to the start of the list"""
+			"""
+			@append is used to tell the runtime to add the result to the start of the list
+			"""
 			directive @append on FRAGMENT_SPREAD
 
 			"""@allLists is used to tell the runtime to add the result to all list"""
@@ -222,28 +258,40 @@ test('list operations are included but delete directive should not be in when we
 			"""
 			directive @parentID(value: ID!) on FRAGMENT_SPREAD
 
-			"""@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when on FRAGMENT_SPREAD
 
-			"""@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when_not on FRAGMENT_SPREAD
 
 			"""@arguments is used to define the arguments of a fragment"""
 			directive @arguments on FRAGMENT_DEFINITION
 
-			"""@with is used to provide arguments to fragments that have been marked with @arguments"""
+			"""
+			@with is used to provide arguments to fragments that have been marked with @arguments
+			"""
 			directive @with on FRAGMENT_SPREAD
 
 			"""@cache is used to specify cache rules for a query"""
 			directive @cache(policy: CachePolicy, partial: Boolean) on QUERY
 
-			"""@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually."""
+			"""
+			@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually.
+			"""
 			directive @load on QUERY
 
-			"""@mask_enable to enable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_enable to enable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_enable on FRAGMENT_SPREAD
 
-			"""@mask_disable to disable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_disable to disable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_disable on FRAGMENT_SPREAD
 
 			directive @User_delete repeatable on FIELD
@@ -313,10 +361,14 @@ test("writing twice doesn't duplicate definitions", async function () {
 			"""
 			directive @paginate(name: String) on FIELD
 
-			"""@prepend is used to tell the runtime to add the result to the end of the list"""
+			"""
+			@prepend is used to tell the runtime to add the result to the end of the list
+			"""
 			directive @prepend on FRAGMENT_SPREAD
 
-			"""@append is used to tell the runtime to add the result to the start of the list"""
+			"""
+			@append is used to tell the runtime to add the result to the start of the list
+			"""
 			directive @append on FRAGMENT_SPREAD
 
 			"""@allLists is used to tell the runtime to add the result to all list"""
@@ -328,28 +380,40 @@ test("writing twice doesn't duplicate definitions", async function () {
 			"""
 			directive @parentID(value: ID!) on FRAGMENT_SPREAD
 
-			"""@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when on FRAGMENT_SPREAD
 
-			"""@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)"""
+			"""
+			@when_not is used to provide a conditional or in situations where it doesn't make sense (eg when removing or deleting a node.)
+			"""
 			directive @when_not on FRAGMENT_SPREAD
 
 			"""@arguments is used to define the arguments of a fragment"""
 			directive @arguments on FRAGMENT_DEFINITION
 
-			"""@with is used to provide arguments to fragments that have been marked with @arguments"""
+			"""
+			@with is used to provide arguments to fragments that have been marked with @arguments
+			"""
 			directive @with on FRAGMENT_SPREAD
 
 			"""@cache is used to specify cache rules for a query"""
 			directive @cache(policy: CachePolicy, partial: Boolean) on QUERY
 
-			"""@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually."""
+			"""
+			@load is used to disable automatic fetch (no load, no auto fetch in component), you will have to do it manually.
+			"""
 			directive @load on QUERY
 
-			"""@mask_enable to enable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_enable to enable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_enable on FRAGMENT_SPREAD
 
-			"""@mask_disable to disable masking on fragment (overwriting the global conf)"""
+			"""
+			@mask_disable to disable masking on fragment (overwriting the global conf)
+			"""
 			directive @mask_disable on FRAGMENT_SPREAD
 		`)
 })

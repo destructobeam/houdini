@@ -38,8 +38,7 @@ test("doesn't include directives defined in plugins", async function () {
 		  users(stringValue: "asdf") {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 
@@ -102,8 +101,7 @@ test('plugins can customize the hash', async function () {
 		  users(stringValue: "asdf") {
 		    id
 		  }
-		}
-		\`,
+		}\`,
 
 		    "rootType": "Query",
 

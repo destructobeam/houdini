@@ -33,13 +33,7 @@ export default async function addListFragments(
 
 					// if we need to use an error relative to this node
 					let error = {
-						...new graphql.GraphQLError(
-							'',
-							node,
-							new graphql.Source(''),
-							node.loc ? [node.loc.start, node.loc.end] : null,
-							path
-						),
+						...new Error(),
 						filepath: doc.filename,
 					}
 
@@ -351,11 +345,11 @@ export default async function addListFragments(
 export function connectionSelection(
 	config: Config,
 	field: graphql.GraphQLField<any, any>,
-	type: graphql.GraphQLObjectType,
+	type: graphql.GraphQLObjectType | graphql.GraphQLInterfaceType,
 	selection: graphql.SelectionSetNode | undefined
 ): {
 	selection: graphql.SelectionSetNode | undefined
-	type: graphql.GraphQLObjectType
+	type: graphql.GraphQLObjectType | graphql.GraphQLInterfaceType
 	connection: boolean
 	error: string | null
 } {

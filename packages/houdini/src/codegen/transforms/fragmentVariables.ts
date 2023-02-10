@@ -1,4 +1,5 @@
 import * as graphql from 'graphql'
+import { ConstValueNode } from 'graphql/language'
 
 import type { Config, Document } from '../../lib'
 import { HoudiniError, ArtifactKind } from '../../lib'
@@ -193,7 +194,7 @@ export function inlineFragmentArgs({
 					return {
 						...node,
 						name: {
-							kind: 'Name',
+							kind: graphql.Kind.NAME,
 							value: newFragmentName,
 						},
 					} as graphql.FragmentSpreadNode
@@ -406,9 +407,9 @@ function operationScope(operation: graphql.OperationDefinitionNode) {
 			(scope, definition) => ({
 				...scope,
 				[definition.variable.name.value]: {
-					kind: 'Variable',
+					kind: graphql.Kind.VARIABLE,
 					name: {
-						kind: 'Name',
+						kind: graphql.Kind.NAME,
 						value: definition.variable.name.value,
 					},
 				} as graphql.VariableNode,
@@ -432,29 +433,29 @@ export function fragmentArgumentsDefinitions(
 	// we have a list of the arguments
 	return args.map<graphql.VariableDefinitionNode>((arg) => {
 		const innerType: graphql.NamedTypeNode = {
-			kind: 'NamedType',
+			kind: graphql.Kind.NAMED_TYPE,
 			name: {
-				kind: 'Name',
+				kind: graphql.Kind.NAME,
 				value: arg.type,
 			},
 		}
 
 		return {
-			kind: 'VariableDefinition',
+			kind: graphql.Kind.VARIABLE_DEFINITION,
 			type: arg.required
 				? innerType
 				: {
-						kind: 'NonNullType',
+						kind: graphql.Kind.NON_NULL_TYPE,
 						type: innerType,
 				  },
 			variable: {
-				kind: 'Variable',
+				kind: graphql.Kind.VARIABLE,
 				name: {
-					kind: 'Name',
+					kind: graphql.Kind.NAME,
 					value: arg.name,
 				},
 			},
-			defaultValue: arg.defaultValue ?? undefined,
+			defaultValue: (arg.defaultValue as ConstValueNode) ?? undefined,
 		}
 	})
 }
