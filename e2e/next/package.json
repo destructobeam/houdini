@@ -4,10 +4,14 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"api": "e2e-api"
+		"api": "e2e-api",
+		"build": "next build",
+		"build:": "cd ../../ && ((run build && cd -) || (cd - && exit 1))",
+		"build:dev": "pnpm build: && pnpm dev",
+		"build:test": "pnpm build: && pnpm test",
+		"build:build": "pnpm build: && pnpm build"
 	},
 	"dependencies": {
 		"cross-env": "^7.0.3",
